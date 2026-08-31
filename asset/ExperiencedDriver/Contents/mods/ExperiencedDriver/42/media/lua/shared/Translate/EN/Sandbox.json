@@ -1,0 +1,139 @@
+{
+    "Sandbox_ExperiencedDriverOptions": "Experienced Driver",
+
+    "Sandbox_ExperiencedDriver_XPValue": "Fixed interval XP gain",
+    "Sandbox_ExperiencedDriver_XPValue_tooltip": "Setting this to 0 will disable the experience bonus!",
+
+    "Sandbox_ExperiencedDriver_TimeInterval": "Seconds required",
+    "Sandbox_ExperiencedDriver_TimeInterval_tooltip": "Seconds required to gain experience.",
+
+    "Sandbox_ExperiencedDriver_XPIndicator": "XP Indicator",
+    "Sandbox_ExperiencedDriver_XPIndicator_tooltip": "When enabled, XP notifications will appear on your screen. <LINE>Because you clearly need to see every single XP gain.",
+
+    "Sandbox_ExperiencedDriver_Brakepower": "Enable Break Power Bonus",
+    "Sandbox_ExperiencedDriver_Brakepower1": "Break Power Bonus on level 1",
+    "Sandbox_ExperiencedDriver_Brakepower1_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_Brakepower2": "Break Power Bonus on level 2",
+    "Sandbox_ExperiencedDriver_Brakepower2_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_Brakepower3": "Break Power Bonus on level 3",
+    "Sandbox_ExperiencedDriver_Brakepower3_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_Brakepower4": "Break Power Bonus on level 4",
+    "Sandbox_ExperiencedDriver_Brakepower4_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_Brakepower5": "Break Power Bonus on level 5",
+    "Sandbox_ExperiencedDriver_Brakepower5_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_Brakepower6": "Break Power Bonus on level 6",
+    "Sandbox_ExperiencedDriver_Brakepower6_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_Brakepower7": "Break Power Bonus on level 7",
+    "Sandbox_ExperiencedDriver_Brakepower7_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_Brakepower8": "Break Power Bonus on level 8",
+    "Sandbox_ExperiencedDriver_Brakepower8_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_Brakepower9": "Break Power Bonus on level 9",
+    "Sandbox_ExperiencedDriver_Brakepower9_tooltip": "Set 0 to disable.",
+    
+    "Sandbox_ExperiencedDriver_Brakepower10": "Break Power Bonus on level 10",
+    "Sandbox_ExperiencedDriver_Brakepower10_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction": "Enable Damage Reduction",
+    "Sandbox_ExperiencedDriver_DamageReduction1": "Damage Reduction Rate on level 1",
+    "Sandbox_ExperiencedDriver_DamageReduction1_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction2": "Damage Reduction Rate on level 2",
+    "Sandbox_ExperiencedDriver_DamageReduction2_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction3": "Damage Reduction Rate on level 3",
+    "Sandbox_ExperiencedDriver_DamageReduction3_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction4": "Damage Reduction Rate on level 4",
+    "Sandbox_ExperiencedDriver_DamageReduction4_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction5": "Damage Reduction Rate on level 5",
+    "Sandbox_ExperiencedDriver_DamageReduction5_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction6": "Damage Reduction Rate on level 6",
+    "Sandbox_ExperiencedDriver_DamageReduction6_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction7": "Damage Reduction Rate on level 7",
+    "Sandbox_ExperiencedDriver_DamageReduction7_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction8": "Damage Reduction Rate on level 8",
+    "Sandbox_ExperiencedDriver_DamageReduction8_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction9": "Damage Reduction Rate on level 9",
+    "Sandbox_ExperiencedDriver_DamageReduction9_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction10": "Damage Reduction Rate on level 10",
+    "Sandbox_ExperiencedDriver_DamageReduction10_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus": "Enable Speed Bonus",
+    "Sandbox_ExperiencedDriver_SpeedBonus1": "Speed Bonus on level 1",
+    "Sandbox_ExperiencedDriver_SpeedBonus1_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus2": "Speed Bonus on level 2",
+    "Sandbox_ExperiencedDriver_SpeedBonus2_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus3": "Speed Bonus on level 3",
+    "Sandbox_ExperiencedDriver_SpeedBonus3_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus4": "Speed Bonus on level 4",
+    "Sandbox_ExperiencedDriver_SpeedBonus4_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus5": "Speed Bonus on level 5",
+    "Sandbox_ExperiencedDriver_SpeedBonus5_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus6": "Speed Bonus on level 6",
+    "Sandbox_ExperiencedDriver_SpeedBonus6_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus7": "Speed Bonus on level 7",
+    "Sandbox_ExperiencedDriver_SpeedBonus7_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus8": "Speed Bonus on level 8",
+    "Sandbox_ExperiencedDriver_SpeedBonus8_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus9": "Speed Bonus on level 9",
+    "Sandbox_ExperiencedDriver_SpeedBonus9_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus10": "Speed Bonus on level 10",
+    "Sandbox_ExperiencedDriver_SpeedBonus10_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction": "Enable Engine Noise Reduction",
+    "Sandbox_ExperiencedDriver_NoiseReduction1": "Engine Noise Reduction on level 1",
+    "Sandbox_ExperiencedDriver_NoiseReduction1_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction2": "Engine Noise Reduction on level 2",
+    "Sandbox_ExperiencedDriver_NoiseReduction2_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction3": "Engine Noise Reduction on level 3",
+    "Sandbox_ExperiencedDriver_NoiseReduction3_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction4": "Engine Noise Reduction on level 4",
+    "Sandbox_ExperiencedDriver_NoiseReduction4_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction5": "Engine Noise Reduction on level 5",
+    "Sandbox_ExperiencedDriver_NoiseReduction5_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction6": "Engine Noise Reduction on level 6",
+    "Sandbox_ExperiencedDriver_NoiseReduction6_tooltip": "Set 0 to disable.",
+    
+    "Sandbox_ExperiencedDriver_NoiseReduction7": "Engine Noise Reduction on level 7",
+    "Sandbox_ExperiencedDriver_NoiseReduction7_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction8": "Engine Noise Reduction on level 8",
+    "Sandbox_ExperiencedDriver_NoiseReduction8_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction9": "Engine Noise Reduction on level 9",
+    "Sandbox_ExperiencedDriver_NoiseReduction9_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction10": "Engine Noise Reduction on level 10",
+    "Sandbox_ExperiencedDriver_NoiseReduction10_tooltip": "Set 0 to disable.",
+
+    "Sandbox_ExperiencedDriver_DEBUG": "DEBUG MODE",
+    "Sandbox_ExperiencedDriver_DEBUG_tooltip": "Thanks for your support. <LINE>But this is not an option."
+}

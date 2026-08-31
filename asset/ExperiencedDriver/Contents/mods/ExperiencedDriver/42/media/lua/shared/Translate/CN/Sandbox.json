@@ -1,0 +1,139 @@
+{
+    "Sandbox_ExperiencedDriverOptions": "Experienced Driver",
+
+    "Sandbox_ExperiencedDriver_XPValue": "经验数量",
+    "Sandbox_ExperiencedDriver_XPValue_tooltip": "设置为 0 会禁用经验获取!",
+
+    "Sandbox_ExperiencedDriver_TimeInterval": "经验生成间隔",
+    "Sandbox_ExperiencedDriver_TimeInterval_tooltip": "刷新经验所需要的秒数.",
+
+    "Sandbox_ExperiencedDriver_XPIndicator": "经验获取指示",
+    "Sandbox_ExperiencedDriver_XPIndicator_tooltip": "启用后能观赏小人头顶的经验横幅. <LINE>我猜你就是喜欢这种掌控全局的感觉.",
+
+    "Sandbox_ExperiencedDriver_Brakepower": "启用刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower1": "1 级刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower1_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_Brakepower2": "2 级刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower2_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_Brakepower3": "3 级刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower3_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_Brakepower4": "4 级刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower4_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_Brakepower5": "5 级刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower5_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_Brakepower6": "6 级刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower6_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_Brakepower7": "7 级刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower7_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_Brakepower8": "8 级刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower8_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_Brakepower9": "9 级刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower9_tooltip": "设置为 0 以单独禁用.",
+    
+    "Sandbox_ExperiencedDriver_Brakepower10": "10 级刹车增益",
+    "Sandbox_ExperiencedDriver_Brakepower10_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction": "启用伤害减免",
+    "Sandbox_ExperiencedDriver_DamageReduction1": "1 级伤害减免比例",
+    "Sandbox_ExperiencedDriver_DamageReduction1_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction2": "2 级伤害减免比例",
+    "Sandbox_ExperiencedDriver_DamageReduction2_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction3": "3 级伤害减免比例",
+    "Sandbox_ExperiencedDriver_DamageReduction3_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction4": "4 级伤害减免比例",
+    "Sandbox_ExperiencedDriver_DamageReduction4_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction5": "5 级伤害减免比例",
+    "Sandbox_ExperiencedDriver_DamageReduction5_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction6": "6 级伤害减免比例",
+    "Sandbox_ExperiencedDriver_DamageReduction6_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction7": "7 级伤害减免比例",
+    "Sandbox_ExperiencedDriver_DamageReduction7_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction8": "8 级伤害减免比例",
+    "Sandbox_ExperiencedDriver_DamageReduction8_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction9": "9 级伤害减免比例",
+    "Sandbox_ExperiencedDriver_DamageReduction9_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DamageReduction10": "10 级伤害减免比例",
+    "Sandbox_ExperiencedDriver_DamageReduction10_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus": "启用速度增益",
+    "Sandbox_ExperiencedDriver_SpeedBonus1": "1 级最大速度加成比例",
+    "Sandbox_ExperiencedDriver_SpeedBonus1_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus2": "2 级最大速度加成比例",
+    "Sandbox_ExperiencedDriver_SpeedBonus2_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus3": "3 级最大速度加成比例",
+    "Sandbox_ExperiencedDriver_SpeedBonus3_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus4": "4 级最大速度加成比例",
+    "Sandbox_ExperiencedDriver_SpeedBonus4_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus5": "5 级最大速度加成比例",
+    "Sandbox_ExperiencedDriver_SpeedBonus5_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus6": "6 级最大速度加成比例",
+    "Sandbox_ExperiencedDriver_SpeedBonus6_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus7": "7 级最大速度加成比例",
+    "Sandbox_ExperiencedDriver_SpeedBonus7_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus8": "8 级最大速度加成比例",
+    "Sandbox_ExperiencedDriver_SpeedBonus8_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus9": "9 级最大速度加成比例",
+    "Sandbox_ExperiencedDriver_SpeedBonus9_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_SpeedBonus10": "10 级最大速度加成比例",
+    "Sandbox_ExperiencedDriver_SpeedBonus10_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction": "启用引擎噪音抑制",
+    "Sandbox_ExperiencedDriver_NoiseReduction1": "1 级噪音抑制比例",
+    "Sandbox_ExperiencedDriver_NoiseReduction1_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction2": "2 级噪音抑制比例",
+    "Sandbox_ExperiencedDriver_NoiseReduction2_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction3": "3 级噪音抑制比例",
+    "Sandbox_ExperiencedDriver_NoiseReduction3_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction4": "4 级噪音抑制比例",
+    "Sandbox_ExperiencedDriver_NoiseReduction4_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction5": "5 级噪音抑制比例",
+    "Sandbox_ExperiencedDriver_NoiseReduction5_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction6": "6 级噪音抑制比例",
+    "Sandbox_ExperiencedDriver_NoiseReduction6_tooltip": "设置为 0 以单独禁用.",
+    
+    "Sandbox_ExperiencedDriver_NoiseReduction7": "7 级噪音抑制比例",
+    "Sandbox_ExperiencedDriver_NoiseReduction7_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction8": "8 级噪音抑制比例",
+    "Sandbox_ExperiencedDriver_NoiseReduction8_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction9": "9 级噪音抑制比例",
+    "Sandbox_ExperiencedDriver_NoiseReduction9_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_NoiseReduction10": "10 级噪音抑制比例",
+    "Sandbox_ExperiencedDriver_NoiseReduction10_tooltip": "设置为 0 以单独禁用.",
+
+    "Sandbox_ExperiencedDriver_DEBUG": "DEBUG 模式",
+    "Sandbox_ExperiencedDriver_DEBUG_tooltip": "你确定要点吗? <LINE>你可能用不上这个选项哦, 会变卡的~"
+}

@@ -1,0 +1,8 @@
+{
+    "IGUI_perks_Driving_parent": "Vehicle",
+    "IGUI_perks_Driving": "Driving",
+    "IGUI_perks_Driving_Description": "Improve braking performance. <LINE>Reduce component damage. <LINE>Slightly reduce engine noise. <LINE>Increase max speed.",
+    "IGUI_ExperiencedDriver_LockedDescription": "Watch VHS to unlock.",
+
+    "IGUI_PlayerText_Unlocked": "Driving Skill Unlocked"
+}

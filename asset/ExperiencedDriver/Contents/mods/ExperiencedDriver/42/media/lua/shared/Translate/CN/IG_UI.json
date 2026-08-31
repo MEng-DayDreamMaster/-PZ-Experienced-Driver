@@ -1,0 +1,9 @@
+{
+    "IGUI_perks_Driving_parent": "载具",
+    "IGUI_perks_Driving": "驾驶",
+    "IGUI_perks_驾驶_Description": "提升刹车性能. <LINE>降低部件损耗. <LINE>减少引擎噪音. <LINE>提升最大速度.",
+    "IGUI_perks_Driving_Description": "提升刹车性能. <LINE>降低部件损耗. <LINE>减少引擎噪音. <LINE>提升最大速度.",
+    "IGUI_ExperiencedDriver_LockedDescription": "观看特殊 VHS 以解锁.",
+
+    "IGUI_PlayerText_Unlocked": "驾驶技能解锁"
+}

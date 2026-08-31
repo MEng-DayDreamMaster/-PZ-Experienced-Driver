@@ -1,0 +1,14 @@
+module ExperiencedDriver 
+{
+    character_trait_definition experienceddriver:acedriver 
+    {
+        IsProfessionTrait = false,
+        DisabledInMultiplayer = false,
+        Cost = 4, 
+        CharacterTrait = experienceddriver:acedriver,   
+        UIName = UI_trait_ExperiencedDriver_acedriver,
+        UIDescription = UI_trait_ExperiencedDriver_acedriver_Desc,   
+        MutuallyExclusiveTraits = base:sundaydriver;base:agoraphobic;base:claustrophobic,
+        XPBoosts = Mechanics=1;Electricity=1;Driving=3,
+    }
+}

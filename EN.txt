@@ -1,0 +1,64 @@
+[h1]Main Features[/h1]
+[list]
+[*]Added a new Driving skill, which allows players to gain Driving XP by driving vehicles.
+
+[*]The Driving skill must be unlocked by watching newly added VHS tapes.
+[i]The VHS tapes and skill books will spawn normally at their corresponding locations throughout the game.[/i]
+[/list]
+[h3][u]No XP will be accumulated before the skill is unlocked[/u][/h3]
+
+[h2]Skill Bonuses[/h2]
+[list]
+[*][h3]Increase Vehicle Top Speed[/h3]
+Levels 1–10 provide a percentage-based bonus.
+[i]For example, a Level 1 bonus of 0.08 results in a [b]top speed of 108%[/b] of the original value.[/i]
+[*][h3]Improve Vehicle Braking Performance[/h3]
+Same as above.
+[*][h3]Reduce Vehicle Engine Noise[/h3]
+Levels 1–10 reduce the attribute value by a percentage.
+[i]For example, a Level 1 reduction of 0.03 results in [b]97% of the original[/b] engine noise.[/i]
+[*][h3]Reduce Vehicle Part Collision Damage[/h3]
+Reduces damage caused to vehicle parts by [i]active/passive[/i] collisions.
+Same percentage-based scaling as above.
+[/list]
+[u][b]All of the above features can be individually enabled or disabled, 
+and the parameters for each skill level can be freely adjusted in the Sandbox settings.[/b][/u]
+
+[h2]Compatibility & Known Issues[/h2]
+This mod can be safely removed from an existing save. 
+If you encounter conflicts with other mods or any bugs, please report them.
+[list]
+[*]Known to conflict with other Driving skill mods.
+[*]If you are using any mods that [b][u]override the UI tooltips[/u][/b], please place this mod [b][u]after[/u][/b] them in the load order.
+[/list]
+[h3]Compatible with [b]B42.20 and later[/b].[/h3]
+[b]Host mode[/b] has not been fully tested. Functionality appears to work normally, but compatibility with [b]dedicated servers[/b] is currently unknown
+[h3]The following known issues have only been observed in multiplayer. 
+Please take note:
+[/h3]
+[olist]
+[*][h3]Vehicle State Resets After Leaving the Game[/h3]
+When quitting the game while sitting in the driver's seat, the vehicle's state may reset. 
+The bonuses will not automatically be restored when entering the vehicle again.
+[b]Solution:[/b] Simply re-enter the vehicle to restore the bonuses.
+
+[*][h3]Original Skill Level-Up Banner[/h3]
+After increasing a skill level, the notification banner may display an original field such as:
+[quote]IGUI_perks_Driving[/quote]
+This is a [b]base-game issue.[/b] When retrieving the skill's translation field, the game incorrectly concatenates getName() twice due to an error in getType().
+[/olist]
+[hr][/hr]
+[h1]Special Thanks & Disclaimer[/h1]
+[quote]
+This mod was inspired by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3407791878]Driving Skill [B42][/url] and is [b][u]an independent reimplementation of a similar concept[/u][/b]. 
+It was developed separately for the current version of Project Zomboid and [b]does not[/b] directly incorporate the original mod's files or assets.
+
+I may add other interesting features in the future, such as increased damage when hitting zombies or functionality for driving animals away, depending on available free time.
+
+Special thanks again to [url=https://steamcommunity.com/id/Afterworlds]Afterworlds[/url] for creating such a great mod.
+If you'd like, you can buy him a [url=https://ko-fi.com/udomakestuff]Ko-fi[/url] — [url=https://ko-fi.com/deepsleeping]OR buy me one.[/url]
+～(∠・ω< )⌒★
+[/quote]
+
+Workshop ID: 3792957770
+Mod ID: NM_CR_ExperiencedDriver

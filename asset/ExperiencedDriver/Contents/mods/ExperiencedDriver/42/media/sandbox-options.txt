@@ -1,0 +1,424 @@
+VERSION = 1,
+option ExperiencedDriver.XPValue {
+    type = integer,
+    default = 2,
+    min = 0,
+    max = 100,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_XPValue,
+    valueTranslation = ExperiencedDriver_XPValue,
+}
+option ExperiencedDriver.TimeInterval {
+    type = integer,
+    default = 60,
+    min = 1,
+    max = 3600,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_TimeInterval,
+    valueTranslation = ExperiencedDriver_TimeInterval,
+}
+option ExperiencedDriver.XPIndicator {
+    type = boolean,
+    default = false,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_XPIndicator,
+    valueTranslation = ExperiencedDriver_XPIndicator,
+}
+option ExperiencedDriver.Brakepower {
+    type = boolean,
+    default = true,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower,
+    valueTranslation = ExperiencedDriver_Brakepower,
+}
+option ExperiencedDriver.Brakepower1 {
+    type = double,
+    default = 0.1,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower1,
+    valueTranslation = ExperiencedDriver_Brakepower1,
+}
+option ExperiencedDriver.Brakepower2 {
+    type = double,
+    default = 0.2,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower2,
+    valueTranslation = ExperiencedDriver_Brakepower2,
+}
+option ExperiencedDriver.Brakepower3 {
+    type = double,
+    default = 0.3,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower3,
+    valueTranslation = ExperiencedDriver_Brakepower3,
+}
+option ExperiencedDriver.Brakepower4 {
+    type = double,
+    default = 0.4,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower4,
+    valueTranslation = ExperiencedDriver_Brakepower4,
+}
+option ExperiencedDriver.Brakepower5 {
+    type = double,
+    default = 0.5,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower5,
+    valueTranslation = ExperiencedDriver_Brakepower5,
+}
+option ExperiencedDriver.Brakepower6 {
+    type = double,
+    default = 0.6,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower6,
+    valueTranslation = ExperiencedDriver_Brakepower6,
+}
+option ExperiencedDriver.Brakepower7 {
+    type = double,
+    default = 0.7,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower7,
+    valueTranslation = ExperiencedDriver_Brakepower7,
+}
+option ExperiencedDriver.Brakepower8 {
+    type = double,
+    default = 0.8,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower8,
+    valueTranslation = ExperiencedDriver_Brakepower8,
+}
+option ExperiencedDriver.Brakepower9 {
+    type = double,
+    default = 0.9,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower9,
+    valueTranslation = ExperiencedDriver_Brakepower9,
+}
+option ExperiencedDriver.Brakepower10 {
+    type = double,
+    default = 1.0,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_Brakepower10,
+    valueTranslation = ExperiencedDriver_Brakepower10,
+}
+
+option ExperiencedDriver.DamageReduction {
+    type = boolean,
+    default = true,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction,
+    valueTranslation = ExperiencedDriver_DamageReduction,
+}
+option ExperiencedDriver.DamageReduction1 {
+    type = double,
+    default = 0.05,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction1,
+    valueTranslation = ExperiencedDriver_DamageReduction1,
+}
+option ExperiencedDriver.DamageReduction2 {
+    type = double,
+    default = 0.1,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction2,
+    valueTranslation = ExperiencedDriver_DamageReduction2,
+}
+option ExperiencedDriver.DamageReduction3 {
+    type = double,
+    default = 0.15,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction3,
+    valueTranslation = ExperiencedDriver_DamageReduction3,
+}
+option ExperiencedDriver.DamageReduction4 {
+    type = double,
+    default = 0.2,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction4,
+    valueTranslation = ExperiencedDriver_DamageReduction4,
+}
+option ExperiencedDriver.DamageReduction5 {
+    type = double,
+    default = 0.25,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction5,
+    valueTranslation = ExperiencedDriver_DamageReduction5,
+}
+option ExperiencedDriver.DamageReduction6 {
+    type = double,
+    default = 0.3,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction6,
+    valueTranslation = ExperiencedDriver_DamageReduction6,
+}
+option ExperiencedDriver.DamageReduction7 {
+    type = double,
+    default = 0.35,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction7,
+    valueTranslation = ExperiencedDriver_DamageReduction7,
+}
+option ExperiencedDriver.DamageReduction8 {
+    type = double,
+    default = 0.4,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction8,
+    valueTranslation = ExperiencedDriver_DamageReduction8,
+}
+option ExperiencedDriver.DamageReduction9 {
+    type = double,
+    default = 0.45,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction9,
+    valueTranslation = ExperiencedDriver_DamageReduction9,
+}
+option ExperiencedDriver.DamageReduction10 {
+    type = double,
+    default = 0.5,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DamageReduction10,
+    valueTranslation = ExperiencedDriver_DamageReduction10,
+}
+
+option ExperiencedDriver.SpeedBonus {
+    type = boolean,
+    default = true,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus,
+    valueTranslation = ExperiencedDriver_SpeedBonus,
+}
+option ExperiencedDriver.SpeedBonus1 {
+    type = double,
+    default = 0.05,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus1,
+    valueTranslation = ExperiencedDriver_SpeedBonus1,
+}
+option ExperiencedDriver.SpeedBonus2 {
+    type = double,
+    default = 0.1,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus2,
+    valueTranslation = ExperiencedDriver_SpeedBonus2,
+}
+option ExperiencedDriver.SpeedBonus3 {
+    type = double,
+    default = 0.15,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus3,
+    valueTranslation = ExperiencedDriver_SpeedBonus3,
+}
+option ExperiencedDriver.SpeedBonus4 {
+    type = double,
+    default = 0.2,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus4,
+    valueTranslation = ExperiencedDriver_SpeedBonus4,
+}
+option ExperiencedDriver.SpeedBonus5 {
+    type = double,
+    default = 0.25,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus5,
+    valueTranslation = ExperiencedDriver_SpeedBonus5,
+}
+option ExperiencedDriver.SpeedBonus6 {
+    type = double,
+    default = 0.3,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus6,
+    valueTranslation = ExperiencedDriver_SpeedBonus6,
+}
+option ExperiencedDriver.SpeedBonus7 {
+    type = double,
+    default = 0.35,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus7,
+    valueTranslation = ExperiencedDriver_SpeedBonus7,
+}
+option ExperiencedDriver.SpeedBonus8 {
+    type = double,
+    default = 0.4,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus8,
+    valueTranslation = ExperiencedDriver_SpeedBonus8,
+}
+option ExperiencedDriver.SpeedBonus9 {
+    type = double,
+    default = 0.45,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus9,
+    valueTranslation = ExperiencedDriver_SpeedBonus9,
+}
+option ExperiencedDriver.SpeedBonus10 {
+    type = double,
+    default = 0.5,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_SpeedBonus10,
+    valueTranslation = ExperiencedDriver_SpeedBonus10,
+}
+
+option ExperiencedDriver.NoiseReduction {
+    type = boolean,
+    default = true,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction,
+    valueTranslation = ExperiencedDriver_NoiseReduction,
+}
+option ExperiencedDriver.NoiseReduction1 {
+    type = double,
+    default = 0.03,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction1,
+    valueTranslation = ExperiencedDriver_NoiseReduction1,
+}
+option ExperiencedDriver.NoiseReduction2 {
+    type = double,
+    default = 0.06,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction2,
+    valueTranslation = ExperiencedDriver_NoiseReduction2,
+}
+option ExperiencedDriver.NoiseReduction3 {
+    type = double,
+    default = 0.09,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction3,
+    valueTranslation = ExperiencedDriver_NoiseReduction3,
+}
+option ExperiencedDriver.NoiseReduction4 {
+    type = double,
+    default = 0.12,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction4,
+    valueTranslation = ExperiencedDriver_NoiseReduction4,
+}
+option ExperiencedDriver.NoiseReduction5 {
+    type = double,
+    default = 0.15,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction5,
+    valueTranslation = ExperiencedDriver_NoiseReduction5,
+}
+option ExperiencedDriver.NoiseReduction6 {
+    type = double,
+    default = 0.18,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction6,
+    valueTranslation = ExperiencedDriver_NoiseReduction6,
+}
+option ExperiencedDriver.NoiseReduction7 {
+    type = double,
+    default = 0.21,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction7,
+    valueTranslation = ExperiencedDriver_NoiseReduction7,
+}
+option ExperiencedDriver.NoiseReduction8 {
+    type = double,
+    default = 0.24,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction8,
+    valueTranslation = ExperiencedDriver_NoiseReduction8,
+}
+option ExperiencedDriver.NoiseReduction9 {
+    type = double,
+    default = 0.27,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction9,
+    valueTranslation = ExperiencedDriver_NoiseReduction9,
+}
+option ExperiencedDriver.NoiseReduction10 {
+    type = double,
+    default = 0.3,
+    min = 0,
+    max = 1,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_NoiseReduction10,
+    valueTranslation = ExperiencedDriver_NoiseReduction10,
+}
+option ExperiencedDriver.DEBUG {
+    type = boolean,
+    default = false,
+    page = ExperiencedDriverOptions,
+    translation = ExperiencedDriver_DEBUG,
+    valueTranslation = ExperiencedDriver_DEBUG,
+}
