@@ -6,5 +6,4 @@ poster=poster.png
 icon=icon.png
 versionMin=42.20
 modversion=0.1,
-loadModAfter=B42Trans_CN
 incompatible=B4213DrivingSkill,DrivingSkill
