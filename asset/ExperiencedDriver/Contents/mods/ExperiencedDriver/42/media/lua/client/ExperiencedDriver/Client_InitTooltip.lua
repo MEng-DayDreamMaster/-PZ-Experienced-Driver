@@ -3,11 +3,11 @@ require "XpSystem/ISUI/ISSkillProgressBar"
 local originalUpdateTooltip = ISSkillProgressBar.updateTooltip
 local originalRenderPerkRect = ISSkillProgressBar.renderPerkRect
 
-function ISSkillProgressBar:updateTooltip(lvlSelected)
+local function updateTooltipHook(self, lvlSelected)
 
     originalUpdateTooltip(self, lvlSelected)
 
-    if self.perk:getName() == "Driving" then
+    if self.perk == Perks.Driving then
         local player = self.char
         local data = ExperiencedDriver.getData(player)
 
@@ -22,8 +22,8 @@ function ISSkillProgressBar:updateTooltip(lvlSelected)
     end
 end
 
-function ISSkillProgressBar:renderPerkRect()
-    if self.perk:getName() == "Driving" then
+local function renderPerkRectHook(self)
+    if self.perk == Perks.Driving then
         local data = ExperiencedDriver.getData(self.char)
 
         if not data.unlocked then
@@ -46,3 +46,26 @@ function ISSkillProgressBar:renderPerkRect()
 
     originalRenderPerkRect(self)
 end
+
+
+local function patchSkillProcessBar() 
+    local currentUpdateTooltip = ISSkillProgressBar.updateTooltip
+    local currentRenderPerkRect = ISSkillProgressBar.renderPerkRect
+
+    if currentUpdateTooltip ~= updateTooltipHook then
+        originalUpdateTooltip = currentUpdateTooltip
+        ISSkillProgressBar.updateTooltip = updateTooltipHook
+    end
+
+    if currentRenderPerkRect ~= renderPerkRectHook then
+        originalRenderPerkRect = currentRenderPerkRect
+        ISSkillProgressBar.renderPerkRect = renderPerkRectHook
+    end
+end
+
+patchSkillProcessBar()
+
+
+Events.OnGameStart.Add(function()
+    patchSkillProcessBar()
+end)
