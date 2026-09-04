@@ -3,6 +3,9 @@
 驾驶技能需要观看新增的录像带解锁，录像带和技能书会常规刷新在游戏中相应的地点。
 [h3][u]在技能解锁前不会累计经验！[/u][/h3]
 
+新增了一个非职业特质，能够初始获得3级驾驶，1级技工，1级电工；开局解锁驾驶技能经验获取。
+该 -4 特质与 “新手司机”、“幽闭恐惧”、“开阔恐惧” 互斥。
+
 [h2]技能增益[/h2]
 [list]
 [*][h3]提升车辆最大速度[/h3]
@@ -18,21 +21,21 @@
 
 [h2]适用性及已知问题[/h2]
 已知与其他驾驶技能模组冲突。
-可以从存档中安全移除，如有其他模组冲突或Bug请报告。
+可以从存档中安全移除，如有其他[url=https://github.com/MEng-DayDreamMaster/-PZ-Experienced-Driver/issues] 模组冲突或Bug请报告[/url]。
 
-适用于[b]B42.20[/b]及以上版本，Host 模式[b][u]不完全测试[/u][/b]功能正常，独立服务器[b][u]兼容性未知[/u][/b]。
+适用于[b]B42.20[/b]及以上版本。
 [h3]以下已知兼容性问题均出现在多人模式下，请注意：[/h3]
 [olist]
 [*][i][b]在车辆驾驶位退出游戏后，车辆状态重置，再次进入无法自动恢复增益[/b][/i]
 重新进入车辆即可解决。
 
 [*][i][b]在等级提升后，提示横幅出现了未翻译的原始字段[/b][/i]
-[quote]IGUI_perks_xxxx[/quote]
+[quote]IGUI_perks_Driving[/quote]
 官方遗留问题，游戏获取技能翻译字段时 getType() 错误地重复拼接了 getName()
 [/olist]
 [hr][/hr]
 [h1]特别说明[/h1]
-本模组受 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3407791878]Driving Skill [B42][/url] 启发，是该模组的独立功能复现，未使用该Mod原码或数字资产。未来考虑添加其他有趣的功能（如僵尸撞击伤害提升，或动物驱离功能），视空暇时间而定。
+本模组受 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3407791878]Driving Skill [B42][/url] 启发，是该模组的独立功能复现，未直接抄袭该Mod原码或数字资产。未来考虑添加其他有趣的功能（如僵尸撞击伤害提升，或动物驱离功能），视空暇时间而定。
 再次感谢 [url=https://steamcommunity.com/id/Afterworlds]Afterworlds[/url] 和他的超棒模组。
 
 

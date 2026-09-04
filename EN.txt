@@ -2,6 +2,10 @@
 [list]
 [*]Added a new Driving skill, which allows players to gain Driving XP by driving vehicles.
 
+[*]Added a new non-occupation trait that grants 3 levels of Driving, 1 level of Mechanics, and 1 level of Electrical at the start. 
+Driving skill XP gain is unlocked from the beginning.
+This -4 trait is mutually exclusive with [b]“Sunday Driver”[/b], [b]“Claustrophobic”[/b], and [b]“Agoraphobic”[/b].
+
 [*]The Driving skill must be unlocked by watching newly added VHS tapes.
 [i]The VHS tapes and skill books will spawn normally at their corresponding locations throughout the game.[/i]
 [/list]
@@ -26,13 +30,13 @@ and the parameters for each skill level can be freely adjusted in the Sandbox se
 
 [h2]Compatibility & Known Issues[/h2]
 This mod can be safely removed from an existing save. 
-If you encounter conflicts with other mods or any bugs, please report them.
+If you encounter conflicts with other mods or any bugs, [url=https://github.com/MEng-DayDreamMaster/-PZ-Experienced-Driver/issues]please report them[/url].
 [list]
 [*]Known to conflict with other Driving skill mods.
 [*]If you are using any mods that [b][u]override the UI tooltips[/u][/b], please place this mod [b][u]after[/u][/b] them in the load order.
 [/list]
 [h3]Compatible with [b]B42.20 and later[/b].[/h3]
-[b]Host mode[/b] has not been fully tested. Functionality appears to work normally, but compatibility with [b]dedicated servers[/b] is currently unknown
+
 [h3]The following known issues have only been observed in multiplayer. 
 Please take note:
 [/h3]
