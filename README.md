@@ -4,6 +4,10 @@
 
 - Added a new **Driving** skill that allows players to gain Driving XP by driving vehicles.
 
+- Added a new non-occupation trait that grants 3 levels of Driving, 1 level of Mechanics, and 1 level of Electrical at the start.
+  - Driving skill XP gain is unlocked from the beginning.
+  - This -4 trait is mutually exclusive with “Sunday Driver”, “Claustrophobic”, and “Agoraphobic”.
+
 - The Driving skill must first be unlocked by watching the newly added VHS tapes.
   - The VHS tapes and skill books will spawn normally at their corresponding locations throughout the game.
 
@@ -51,8 +55,6 @@ If you encounter conflicts with other mods or any bugs, please report them.
 ### Game Version
 
 **Compatible with B42.20 and later.**
-
-**Host mode** has not been fully tested. The functionality appears to work normally, but compatibility with **dedicated servers** is currently unknown.
 
 ### Multiplayer Known Issues
 
