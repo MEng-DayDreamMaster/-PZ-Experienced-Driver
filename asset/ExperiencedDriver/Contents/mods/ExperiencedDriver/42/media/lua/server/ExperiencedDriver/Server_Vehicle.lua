@@ -1,6 +1,8 @@
 if isClient() then return end
 
 local MODULE = "ExperiencedDriver"
+
+-- 原始车辆噪声比例接近 1 / 2.7
 local LOUDNESS_SCALE = 2.7
 
 ---@param player IsoPlayer
@@ -16,7 +18,7 @@ function ExperiencedDriver.initVehicleServer(player)
     local originalMaxSpeed = vehicle:getMaxSpeed()
     local originalEngineLoudness = vehicle:getEngineLoudness() * LOUDNESS_SCALE
 
-    local vehicelData = ExperiencedDriver.getData(vehicle)
+    local vehicleData = ExperiencedDriver.getData(vehicle)
     local level = player:getPerkLevel(Perks.Driving)    
 
     if playerData.unlocked then 
@@ -95,18 +97,18 @@ function ExperiencedDriver.initVehicleServer(player)
         end
     end
 
-    vehicelData.brakingForce = originalBrakingForce
-    vehicelData.maxSpeed = originalMaxSpeed
-    vehicelData.engineNoise = math.ceil(originalEngineLoudness)   
+    vehicleData.brakingForce = originalBrakingForce
+    vehicleData.maxSpeed = originalMaxSpeed
+    vehicleData.engineNoise = math.ceil(originalEngineLoudness)   
 
     playerData.vehicleID = vehicle:getId()
     if isServer() then
-        vehicelData.driver = player:getOnlineID()
+        vehicleData.driver = player:getOnlineID()
 
         player:transmitModData()
         vehicle:transmitModData()
     else        
-        vehicelData.driver = player:getID()
+        vehicleData.driver = player:getID()
     end
 end
 
@@ -171,7 +173,7 @@ local function reduceDamageServer()
                                                     amount = amount
                                                 }
                                             )
-                                        end     -- 11                                  
+                                        end     -- 11 都怪Lua不给我用 continue; 害我写 end 楼梯                                 
                                     end     -- 10
                                 end     -- 9
                             end     -- 8

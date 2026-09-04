@@ -11,14 +11,13 @@ local bookData = {
 
 local targets = {
 	"BookstoreBooks",
-	"CrateBooks",
-	"GarageFirearms",
-	"GunStoreLiterature",
-	"HuntingLockers",
-	"SurvivalGear",
 	"BookstoreOutdoors",
-	"CampingLockers",
-	"CampingStoreBooks",
+	"CrateBooks",
+	"CrateBooksSchool",
+	"LibraryBooks",
+	"LibraryOutdoors",
+	"UniversityLibraryBooks",
+	"GarageMechanics"
 }
 
 for i, distribution in ipairs(targets) do
