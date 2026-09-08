@@ -1,12 +1,12 @@
 ExperiencedDriver = ExperiencedDriver or {}
+ExperiencedDriver.CompatibleList = ExperiencedDriver.CompatibleList or {}
 
 local myRegistries = require "ExperiencedDriver_registries"
+local find = string.find
 
 ExperiencedDriver.INTERACTION_GUID = "RM_14eaf741-67cb-4be8-93bd-bc6d35ccfe8b"
-
 ExperiencedDriver.ACEDRIVER = myRegistries.traits.AceDriver
 
-local find = string.find
 
 local function addMutuallyExclusive()
     if not ExperiencedDriver.ACEDRIVER then return end
@@ -21,6 +21,13 @@ local function addMutuallyExclusive()
         CharacterTraitDefinition.getCharacterTraitDefinition(v):
             addMutuallyExclusive(ExperiencedDriver.ACEDRIVER)
     end 
+end
+
+local function addCompatibleMod()
+    local BeyondTen = _G.BeyondTen
+    if type(BeyondTen) == "table" then
+        ExperiencedDriver.CompatibleList["BeyondTen"] = true
+    end
 end
 
 ---@param object IsoObject
@@ -145,9 +152,22 @@ local function ohMyPcccccccc(key)
             end
 
             print("=====[DEBUG END] Something went wrong if I appear alone=====")
+
+        elseif key == Keyboard.KEY_NUMPAD3 then
+            local player = getPlayer()
+            if player ~= nil then
+                print("========Beyond Ten Test========")
+                ---@diagnostic disable-next-line: unnecessary-if
+                if ExperiencedDriver.CompatibleList["BeyondTen"] then
+                    local BeyondTen = _G.BeyondTen
+                    print(BeyondTen.GetEffectiveLevel(player, Perks.Driving))
+                end
+            end
+            print("=====[DEBUG END] Something went wrong if I appear alone=====")
         end
     end
 end
 
 Events.OnGameBoot.Add(addMutuallyExclusive)
+Events.OnGameStart.Add(addCompatibleMod)
 Events.OnKeyStartPressed.Add(ohMyPcccccccc)

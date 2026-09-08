@@ -1,9 +1,18 @@
 require "XpSystem/ISUI/ISSkillProgressBar"
 
+local vanillaUpdateTooltip = ISSkillProgressBar.updateTooltip
+local inUpdateTooltip = false
+
 local originalUpdateTooltip = ISSkillProgressBar.updateTooltip
 local originalRenderPerkRect = ISSkillProgressBar.renderPerkRect
 
 local function updateTooltipHook(self, lvlSelected)
+    if inUpdateTooltip then
+        vanillaUpdateTooltip(self, lvlSelected)
+        return
+    end
+
+    inUpdateTooltip = true
 
     originalUpdateTooltip(self, lvlSelected)
 
@@ -20,6 +29,8 @@ local function updateTooltipHook(self, lvlSelected)
                 .. getText("IGUI_ExperiencedDriver_LockedDescription")
         end
     end
+
+    inUpdateTooltip = false
 end
 
 local function renderPerkRectHook(self)
@@ -33,9 +44,15 @@ local function renderPerkRectHook(self)
             local SKILL_POINT_SPACING = getCore():getOptionFontSizeReal()
             local x = 0
             local y = 0
+            local length = 9
+
+            ---@diagnostic disable-next-line: unnecessary-if
+            if ExperiencedDriver.CompatibleList["BeyondTen"] then
+                length = 14
+            end
 
             -- 原始 i = self.level + 1, 9
-            for _i = 0, 9 do
+            for _i = 0, length do
 		        self:drawTextureScaled(self.SkillUnitBorder, x, y, SKILL_POINT_HGT, SKILL_POINT_HGT, 1, 0.2, 0.2, 0.2)
 		        x = x + SKILL_POINT_HGT + SKILL_POINT_SPACING
 	        end
