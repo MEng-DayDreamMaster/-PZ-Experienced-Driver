@@ -21,6 +21,7 @@
 
 [h2]适用性及已知问题[/h2]
 已知与其他驾驶技能模组冲突。
+已知与 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten - Level 15 Skills [B41/B42][/url] 不相容。
 可以从存档中安全移除，如有其他[url=https://github.com/MEng-DayDreamMaster/-PZ-Experienced-Driver/issues] 模组冲突或Bug请报告[/url]。
 
 适用于[b]B42.20[/b]及以上版本。

@@ -14,40 +14,16 @@ local function onServerCommand(module, command, args)
         ExperiencedDriver.resetVehicle(player)
 
     elseif command == "SetBrakingForce" then
-        local vehicle = player:getVehicle()
-        if vehicle == nil then return end
-
-        vehicle:setBrakingForce(args.value)
-        vehicle:update()
+        ExperiencedDriver.setBrakingForce(player, args)
 
     elseif command == "SetMaxSpeed" then
-        local vehicle = player:getVehicle()
-        if vehicle == nil then return end
-
-        vehicle:setMaxSpeed(args.value)
-        vehicle:update()
+        ExperiencedDriver.setMaxSpeed(player, args)
     
     elseif command == "SetEngineNoise" then
-        local vehicle = player:getVehicle()
-        if vehicle == nil then return end
-
-        vehicle:setEngineFeature(
-            vehicle:getEngineQuality(),
-            args.value,
-            math.floor(vehicle:getScript():getEngineForce())
-        )
-        vehicle:update()
+        ExperiencedDriver.setEngineNoise(player, args)
 
     elseif command == "SetNewCondition" then
-        local vehicle = player:getVehicle()
-        if vehicle == nil or not vehicle:isDriver(player) then return end
-
-        local part = vehicle:getPartById(args.id)
-        if part ~= nil then
-            part:setCondition(args.amount)
-            vehicle:transmitPartCondition(part)
-            -- vehicle:updatePartStats()
-        end        
+        ExperiencedDriver.setNewCondition(player, args)      
     end
 end
 

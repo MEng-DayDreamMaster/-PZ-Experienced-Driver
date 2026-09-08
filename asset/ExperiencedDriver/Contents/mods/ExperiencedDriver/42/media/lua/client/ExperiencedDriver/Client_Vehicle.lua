@@ -1,6 +1,50 @@
 local MODULE = "ExperiencedDriver"
 
 ---@param player IsoPlayer
+function ExperiencedDriver.setBrakingForce(player, args)
+    local vehicle = player:getVehicle()
+    if vehicle == nil then return end
+
+    vehicle:setBrakingForce(args.value)
+    vehicle:update()
+end
+
+---@param player IsoPlayer
+function ExperiencedDriver.setMaxSpeed(player, args)
+    local vehicle = player:getVehicle()
+    if vehicle == nil then return end
+
+    vehicle:setMaxSpeed(args.value)
+    vehicle:update()
+end
+
+---@param player IsoPlayer
+function ExperiencedDriver.setEngineNoise(player, args)
+    local vehicle = player:getVehicle()
+    if vehicle == nil then return end
+
+    vehicle:setEngineFeature(
+        vehicle:getEngineQuality(),
+        args.value,
+        math.floor(vehicle:getScript():getEngineForce())
+    )
+    vehicle:update()
+end
+
+---@param player IsoPlayer
+function ExperiencedDriver.setNewCondition(player, args)
+    local vehicle = player:getVehicle()
+    if vehicle == nil or not vehicle:isDriver(player) then return end
+
+    local part = vehicle:getPartById(args.id)
+    if part ~= nil then
+        part:setCondition(args.amount)
+        vehicle:transmitPartCondition(part)
+        -- vehicle:updatePartStats()
+    end
+end
+
+---@param player IsoPlayer
 local function initVehicleRequest(player)
     if player == nil then return end
 

@@ -144,13 +144,13 @@ local function reduceDamageServer()
                                 local part = vehicle:getPartByIndex(j)
                                 local partId = tostring(part:getId())
 
-                                if vehicleData.Parts[partId] ~= nil then
+                                if vehicleData.Parts[partId] ~= nil and ExperiencedDriver.isPartInclusive(partId) then
                                     local previous = vehicleData.Parts[partId]
                                     local now = part:getCondition()
                         
                                     if now < previous then
                                         local damage = previous - now
-                                        local amount = previous - math.ceil(damage * (1 - SandboxVars.ExperiencedDriver["DamageReduction" .. level]))
+                                        local amount = previous - math.floor(damage * (1 - SandboxVars.ExperiencedDriver["DamageReduction" .. level]) + 0.5)
                                         vehicleData.Parts[partId] = amount
 
                                         if isServer() then

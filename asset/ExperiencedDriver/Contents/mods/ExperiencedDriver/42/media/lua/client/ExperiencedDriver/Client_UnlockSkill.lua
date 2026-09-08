@@ -28,6 +28,3 @@ local function unlockSkillRequest(guid, _codes, x, y, z, _text, _device)
 end
 
 Events.OnDeviceText.Add(unlockSkillRequest)
-
-
-

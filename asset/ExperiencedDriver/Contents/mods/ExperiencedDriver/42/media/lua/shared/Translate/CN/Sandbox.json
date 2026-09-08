@@ -1,5 +1,5 @@
 {
-    "Sandbox_ExperiencedDriverOptions": "Experienced Driver",
+    "Sandbox_ExperiencedDriverOptions": "驾驶技能",
 
     "Sandbox_ExperiencedDriver_XPValue": "经验数量",
     "Sandbox_ExperiencedDriver_XPValue_tooltip": "设置为 0 会禁用经验获取!",

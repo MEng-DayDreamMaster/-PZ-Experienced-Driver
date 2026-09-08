@@ -16,12 +16,9 @@ local function addXPServer()
     -- OnTick 会被服务器和服务器 Client 重复注册
     if isClient() then return end
     
-    local amount = 8.0
-    if SandboxVars.ExperiencedDriver.XPValue ~= nil then
-        amount = SandboxVars.ExperiencedDriver.XPValue * 4
-    end
+    local amount = SandboxVars.ExperiencedDriver.XPValue or 1.0
 
-    local interval = SandboxVars.ExperiencedDriver.TimeInterval or 60
+    local interval = SandboxVars.ExperiencedDriver.TimeInterval or 30
     local delta = getGameTime():getRealworldSecondsSinceLastUpdate()
     second = second + delta
     if second >= interval then
@@ -48,6 +45,22 @@ local function addXPServer()
                         local xpObject = player:getXp()
                         local before = xpObject:getXP(Perks.Driving)                        
                         
+                        -- 原始 1.0 经验在不获取倍率会变成 0.25
+                        -- XPBoost +3 后三级会初始得到 6.6 经验
+                        if player:hasTrait(ExperiencedDriver.ACEDRIVER) then
+                            if level < 4 then
+                                amount = amount * 2.5
+                            elseif level < 6 then
+                                amount = amount * 2.75
+                            elseif level < 8 then
+                                amount = amount * 3.0
+                            else
+                                amount = amount * 3.25
+                            end
+                        else
+                            amount = amount * 4.0
+                        end
+
                         xpObject:AddXP(
                             Perks.Driving,
                             amount,

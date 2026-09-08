@@ -1,13 +1,15 @@
 ExperiencedDriver = ExperiencedDriver or {}
 
-ExperiencedDriver.INTERACTION_GUID = "RM_14eaf741-67cb-4be8-93bd-bc6d35ccfe8b"
-
 local myRegistries = require "ExperiencedDriver_registries"
 
+ExperiencedDriver.INTERACTION_GUID = "RM_14eaf741-67cb-4be8-93bd-bc6d35ccfe8b"
+
+ExperiencedDriver.ACEDRIVER = myRegistries.traits.AceDriver
+
+local find = string.find
 
 local function addMutuallyExclusive()
-    local myTrait = myRegistries.traits.AceDriver
-    if not myTrait then return end
+    if not ExperiencedDriver.ACEDRIVER then return end
 
     local exclusiveList = {
         CharacterTrait.AGORAPHOBIC,
@@ -17,7 +19,7 @@ local function addMutuallyExclusive()
     
     for _, v in pairs(exclusiveList) do
         CharacterTraitDefinition.getCharacterTraitDefinition(v):
-            addMutuallyExclusive(myTrait)
+            addMutuallyExclusive(ExperiencedDriver.ACEDRIVER)
     end 
 end
 
@@ -34,6 +36,58 @@ function ExperiencedDriver.getData(object)
     return {}
 end
 
+---@param partId string
+---@return boolean
+function ExperiencedDriver.isPartInclusive(partId)
+    local inclusiveSet = {
+        TrunkDoor = true,
+        TruckBed = true,
+        EngineDoor = true,
+        Windshield = true,
+        WindshieldRear = true,
+        WindowFrontLeft = true,
+        WindowFrontRight = true,
+        WindowRearLeft = true,
+        WindowRearRight = true,
+        WindowBackLeft = true ,
+        WindowBackRight = true,
+        DoorFrontLeft = true,
+        DoorFrontRight = true,
+        DoorRear = true,
+        DoorRearLeft = true,
+        DoorRearRight = true,
+        HeadlightLeft = true,
+        HeadlightRight = true,
+        HeadlightRearLeft = true,
+        HeadlightRearRight = true,
+        StorageLidLeft = true,
+        StorageLidRight = true,
+        DAMNBumperFront = true,
+        DAMNBumperRear = true,
+        DAMNWindshieldArmor = true,
+        DAMNWindshieldRearArmor = true,
+        DAMNFrontLeftArmor = true,
+        DAMNFrontRightArmor = true,
+        DAMNBackLeftArmor = true,
+        DAMNBackRightArmor = true,
+        DAMNRearLeftArmor = true,
+        DAMNRearRightArmor = true,
+        DAMNSideSteps = true
+    }
+
+    local isInclusive = inclusiveSet[partId]
+    if isInclusive ~= nil then
+        return isInclusive
+    else
+        local len = #partId
+        if find(partId, "Armor", len - 4, true) == len - 4 then
+            return true
+        end
+
+        return false
+    end
+end
+
 -- Test Function
 local function ohMyPcccccccc(key)
     if SandboxVars.ExperiencedDriver.DEBUG then
@@ -43,7 +97,7 @@ local function ohMyPcccccccc(key)
                 local playerData = ExperiencedDriver.getData(player)
                 print("Wether Unlocked: " .. tostring(playerData.unlocked))
                 print("Perk Level: " .. 
-                    tostring(player:getPerkLevel(PerkFactory.getPerkFromName("Driving"))))
+                    tostring(player:getPerkLevel(Perks.Driving)))
                 print("Am I a driver: " .. tostring(playerData.vehicleID))                
                 local vehicle = player:getVehicle()
                 if vehicle ~= nil then
@@ -73,11 +127,27 @@ local function ohMyPcccccccc(key)
             -- end
 
             -- print("=====[DEBUG END] Something went wrong if I appear alone=====")
+
+        elseif key == Keyboard.KEY_NUMPAD2 then
+            local player = getPlayer()
+            if player ~= nil then             
+                local vehicle = player:getVehicle()
+                if vehicle ~= nil then
+                    print("========Vehicle Parts========")
+                    local counts = vehicle:getPartCount()
+                    for i = 0, counts - 1 do
+                        local part = vehicle:getPartByIndex(i)
+                        if part ~= nil then
+                            print(string.format("\"%s\": %d", part:getId(), part:getCondition()))
+                        end
+                    end
+                end
+            end
+
+            print("=====[DEBUG END] Something went wrong if I appear alone=====")
         end
     end
 end
 
 Events.OnGameBoot.Add(addMutuallyExclusive)
 Events.OnKeyStartPressed.Add(ohMyPcccccccc)
-
-

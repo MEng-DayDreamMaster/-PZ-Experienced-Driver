@@ -26,6 +26,7 @@
 可以安全地從現有存檔中移除本模組，如遇到與其他模組的[url=https://github.com/MEng-DayDreamMaster/-PZ-Experienced-Driver/issues] 衝突或 Bug，請回報[/url]
 [list]
 [*]已知會與其他駕駛技能模組產生衝突
+[*]已知與 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten - Level 15 Skills [B41/B42][/url] 不相容
 [/list]
 [h3]適用於 [b]B42.20[/b] 及以上版本[/h3]
 
@@ -53,3 +54,6 @@
 ～(∠・ω< )⌒★
 [/quote]
 
+
+Workshop ID: 3792957770
+Mod ID: NM_CR_ExperiencedDriver
