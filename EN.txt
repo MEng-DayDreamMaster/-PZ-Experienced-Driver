@@ -29,15 +29,17 @@ Same percentage-based scaling as above.
 and the parameters for each skill level can be freely adjusted in the Sandbox settings.[/b][/u]
 
 [h2]Compatibility & Known Issues[/h2]
+[h3]Compatible with [b]B42.20 and later[/b].[/h3]
 This mod can be safely removed from an existing save. 
 If you encounter conflicts with other mods or any bugs, [url=https://github.com/MEng-DayDreamMaster/-PZ-Experienced-Driver/issues]please report them[/url].
 [list]
 [*]Known to conflict with other Driving skill mods.
+
 [*]With [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten - Level 15 Skills [B41/B42][/url], this mod has no effect above Level 10.
-Load this mod [b]BEFORE[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten[/url] !
+Load this mod [b]BEFORE[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten[/url] ! ! ! ! ! !
+
 [*]If you are using any mods that [b][u]override the UI tooltips[/u][/b], please place this mod [b][u]after[/u][/b] them in the load order.
 [/list]
-[h3]Compatible with [b]B42.20 and later[/b].[/h3]
 
 [h3]The following known issues have only been observed in multiplayer. 
 Please take note:
