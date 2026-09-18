@@ -1,5 +1,4 @@
 ExperiencedDriver = ExperiencedDriver or {}
-ExperiencedDriver.CompatibleList = ExperiencedDriver.CompatibleList or {}
 
 local myRegistries = require "ExperiencedDriver_registries"
 local find = string.find
@@ -23,12 +22,6 @@ local function addMutuallyExclusive()
     end 
 end
 
-local function addCompatibleMod()
-    local BeyondTen = _G.BeyondTen
-    if type(BeyondTen) == "table" then
-        ExperiencedDriver.CompatibleList["BeyondTen"] = true
-    end
-end
 
 ---@param object IsoObject
 ---@return table
@@ -157,10 +150,10 @@ local function ohMyPcccccccc(key)
             local player = getPlayer()
             if player ~= nil then
                 print("========Beyond Ten Test========")
-                ---@diagnostic disable-next-line: unnecessary-if
+
                 if ExperiencedDriver.CompatibleList["BeyondTen"] then
-                    local BeyondTen = _G.BeyondTen
-                    print(BeyondTen.GetEffectiveLevel(player, Perks.Driving))
+                    ---@diagnostic disable-next-line: need-check-nil, call-non-callable
+                    print(ExperiencedDriver.BeyondTen.GetEffectiveLevel(player, Perks.Driving))
                 end
             end
             print("=====[DEBUG END] Something went wrong if I appear alone=====")
@@ -169,5 +162,4 @@ local function ohMyPcccccccc(key)
 end
 
 Events.OnGameBoot.Add(addMutuallyExclusive)
-Events.OnGameStart.Add(addCompatibleMod)
 Events.OnKeyStartPressed.Add(ohMyPcccccccc)

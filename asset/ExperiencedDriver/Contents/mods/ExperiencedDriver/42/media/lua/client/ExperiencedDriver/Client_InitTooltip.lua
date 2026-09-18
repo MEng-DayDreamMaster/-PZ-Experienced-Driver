@@ -46,9 +46,9 @@ local function renderPerkRectHook(self)
             local y = 0
             local length = 9
 
-            ---@diagnostic disable-next-line: unnecessary-if
             if ExperiencedDriver.CompatibleList["BeyondTen"] then
-                length = 14
+                ---@diagnostic disable-next-line: need-check-nil
+                length = toInt(ExperiencedDriver.BeyondTen.MAX_LEVEL - 1)
             end
 
             -- 原始 i = self.level + 1, 9

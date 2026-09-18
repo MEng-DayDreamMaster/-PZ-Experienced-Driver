@@ -5,6 +5,6 @@ id=NM_CR_ExperiencedDriver
 poster=poster.png
 icon=icon.png
 versionMin=42.20
-modversion=0.1.3
+modversion=0.2.0
 loadModBefore=BeyondTen
 incompatible=B4213DrivingSkill,DrivingSkill

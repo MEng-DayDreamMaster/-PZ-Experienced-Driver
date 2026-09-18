@@ -49,7 +49,7 @@ local function initVehicleRequest(player)
     if player == nil then return end
 
     local vehicle = player:getVehicle()
-    if not vehicle or not vehicle:isDriver(player) then return end
+    if vehicle == nil or not vehicle:isDriver(player) then return end
     
     local vehicleData = ExperiencedDriver.getData(vehicle)
     if vehicleData ~= nil and vehicleData.driver ~= nil then
