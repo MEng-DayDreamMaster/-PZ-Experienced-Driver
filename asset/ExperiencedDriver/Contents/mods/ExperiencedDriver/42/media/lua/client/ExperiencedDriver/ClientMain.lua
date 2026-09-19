@@ -23,7 +23,7 @@ local function onServerCommand(module, command, args)
         ExperiencedDriver.setEngineNoise(player, args)
 
     elseif command == "SetNewCondition" then
-        ExperiencedDriver.setNewCondition(player, args)      
+        ExperiencedDriver.setNewCondition(player, args)
     end
 end
 

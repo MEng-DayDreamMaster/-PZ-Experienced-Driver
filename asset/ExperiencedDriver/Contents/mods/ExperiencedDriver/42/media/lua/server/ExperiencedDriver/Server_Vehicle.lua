@@ -129,7 +129,7 @@ function ExperiencedDriver.initVehicleServer(player)
             end
 
             if SandboxVars.ExperiencedDriver.SpeedBonus then
-                sendClientMaxSpeed(player ,originalMaxSpeed, level)
+                sendClientMaxSpeed(player, originalMaxSpeed, level)
             end
 
             if SandboxVars.ExperiencedDriver.NoiseReduction then
@@ -163,6 +163,7 @@ local function forceUpdateVehicle(player, vehicle, level)
     vehicle:updatePartStats()
     sendClientBrakingForce(player, vehicle:getBrakingForce(), level)
     sendClientEngineLoudness(player, vehicle:getEngineLoudness() * LOUDNESS_SCALE, level)
+    sendClientMaxSpeed(player, vehicle:getMaxSpeed(), level)
 end
 
 

@@ -1,4 +1,26 @@
+-- OnTick 会被服务器和服务器 Client 重复注册
+-- 不允许服务器客户端加载这个文件
+if isClient() then return end
+
 local MODULE = "ExperiencedDriver"
+local GetEffectiveLevel = nil
+local AddStoredXP = nil
+
+local function addBeyondTenFunction()
+    if ExperiencedDriver.CompatibleList["BeyondTen"] then
+        ---@diagnostic disable-next-line: need-check-nil
+        if type(ExperiencedDriver.BeyondTen.GetEffectiveLevel) == "function" then
+            ---@diagnostic disable-next-line: need-check-nil
+            GetEffectiveLevel = ExperiencedDriver.BeyondTen.GetEffectiveLevel
+        end
+
+        ---@diagnostic disable-next-line: need-check-nil
+        if type(ExperiencedDriver.BeyondTen.AddStoredXP) == "function" then
+            ---@diagnostic disable-next-line: need-check-nil
+            AddStoredXP = ExperiencedDriver.BeyondTen.AddStoredXP
+        end
+    end
+end
 
 ---@param num number
 local function formatNumber(num)
@@ -26,10 +48,7 @@ local function isPlayerQualified(player)
             -- BeyondTen
             elseif ExperiencedDriver.CompatibleList["BeyondTen"] then
                 ---@diagnostic disable-next-line: need-check-nil
-                local GetEffectiveLevel = ExperiencedDriver.BeyondTen.GetEffectiveLevel
-                if type(GetEffectiveLevel) == "function" then
-                    level = GetEffectiveLevel(player, Perks.Driving)
-                end
+                level = GetEffectiveLevel(player, Perks.Driving)
 
                 ---@diagnostic disable-next-line: need-check-nil
                 if level < ExperiencedDriver.BeyondTen.MAX_LEVEL then
@@ -44,18 +63,14 @@ local function isPlayerQualified(player)
 end
 
 local second = 0.0
-local function addXPServer()
-    -- OnTick 会被服务器和服务器 Client 重复注册
-    if isClient() then return end
-    
-    local amount = SandboxVars.ExperiencedDriver.XPValue or 1.0
-
+local function addXPServer()    
     local interval = SandboxVars.ExperiencedDriver.TimeInterval or 40
     local delta = getGameTime():getRealworldSecondsSinceLastUpdate()
     second = second + delta
     if second >= interval then
         second = 0.0
 
+        local amount = SandboxVars.ExperiencedDriver.XPValue or 1.0
         local players = {}
         if isServer() then
             players = getOnlinePlayers()
@@ -68,7 +83,6 @@ local function addXPServer()
             if player ~= nil then
                 local isQualified, level = isPlayerQualified(player)
                 if isQualified then
-                    local GetEffectiveLevel = nil
                     local xpIndicator = SandboxVars.ExperiencedDriver.XPIndicator or false
                     local xpObject = player:getXp()
                     local beforeXP = xpObject:getXP(Perks.Driving)
@@ -78,10 +92,7 @@ local function addXPServer()
                         local _level = 0
                         
                         ---@diagnostic disable-next-line: need-check-nil
-                        GetEffectiveLevel = ExperiencedDriver.BeyondTen.GetEffectiveLevel
-                        if type(GetEffectiveLevel) == "function" then
-                            _level, beforeXP = GetEffectiveLevel(player, Perks.Driving)
-                        end
+                        _level, beforeXP = GetEffectiveLevel(player, Perks.Driving)
                     end
                         
                     -- 原始 1.0 经验在不获取倍率会变成 0.25
@@ -113,10 +124,11 @@ local function addXPServer()
                     
                     -- BeyondTen
                     if level >= 10 and ExperiencedDriver.CompatibleList["BeyondTen"] then
+                        ExperiencedDriver.AddXPBeyondTen(player, amount)
+
                         local afterLevel = 0
-                        if type(GetEffectiveLevel) == "function" then
-                            afterLevel, afterXP = GetEffectiveLevel(player, Perks.Driving)
-                        end
+                        ---@diagnostic disable-next-line: need-check-nil
+                        afterLevel, afterXP = GetEffectiveLevel(player, Perks.Driving)
 
                         if afterLevel > level then
                             triggerEvent(
@@ -134,7 +146,7 @@ local function addXPServer()
                         local display = formatNumber(afterXP - beforeXP)
                         
                         if xpIndicator then
-                            HaloTextHelper.addGoodText(player, Translator.getText("IGUI_perks_Driving") .. " +" .. display .. "XP")
+                            HaloTextHelper.addGoodText(player, getText("IGUI_perks_Driving") .. " +" .. display .. "XP")
                         end
                     end
                 end
@@ -169,6 +181,6 @@ local function levelPerk(character, perk, _level, increased)
     ExperiencedDriver.initVehicleServer(character)
 end
 
-
+Events.OnGameBoot.Add(addBeyondTenFunction)
 Events.OnTick.Add(addXPServer)
 Events.LevelPerk.Add(levelPerk)

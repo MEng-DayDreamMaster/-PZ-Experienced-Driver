@@ -1,4 +1,5 @@
 ExperiencedDriver = ExperiencedDriver or {}
+ExperiencedDriver.CompatibleList = ExperiencedDriver.CompatibleList or {}
 
 local myRegistries = require "ExperiencedDriver_registries"
 local find = string.find
@@ -114,6 +115,7 @@ local function ohMyPcccccccc(key)
 
             print("=====[DEBUG END] Something went wrong if I appear alone=====")
         elseif key == Keyboard.KEY_NUMPAD1 then
+            -- 这嘎达是修翻译显示错误的
             -- local player = getPlayer()
             -- local perk = Perks.Driving
 
@@ -152,6 +154,10 @@ local function ohMyPcccccccc(key)
                 print("========Beyond Ten Test========")
 
                 if ExperiencedDriver.CompatibleList["BeyondTen"] then
+                    -- 此处强制修改当前 XP 格子经验值为 0
+                    ---@diagnostic disable-next-line: need-check-nil, call-non-callable
+                    ExperiencedDriver.BeyondTen.SetStoredXP(player, Perks.Driving, 0)
+
                     ---@diagnostic disable-next-line: need-check-nil, call-non-callable
                     print(ExperiencedDriver.BeyondTen.GetEffectiveLevel(player, Perks.Driving))
                 end
