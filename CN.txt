@@ -14,7 +14,7 @@
 同上。
 [*][h3]降低车辆引擎噪音[/h3]
 1-10级以百分比降低属性值：如1级减少 0.03，实际引擎噪音 97%
-[*][h3]降低车辆造成的（主动/非主动）部件碰撞伤害[/h3]
+[*][h3]降低车辆造成的 主动 部件碰撞伤害[/h3]
 同上。
 [/list]
 [i]以上功能的启用与否，及各等级的参数均可在沙盒设置中自由调整。[/i]
@@ -23,18 +23,22 @@
 适用于[b]B42.20[/b]及以上版本。
 
 已知与其他驾驶技能模组冲突。
-与 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten - Level 15 Skills [B41/B42][/url] 同时安装时，10 级以上暂无效果。
-但必须于 Beyond Ten [b][u]之前[/u][/b] 加载此模组！！！！！！！
+
+[h3]已适配的其它模组[/h3]
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten - Level 15 Skills [B41/B42][/url] 
+已支持该模组全部功能：上限突破、经验获取及额外增益
+必须于 Beyond Ten [b][u]之前[/u][/b] 加载此模组！！！！！！！
+
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2490220997]KI5's vehicle collection[/url]
+[/list]
 
 可以从存档中安全移除，如有其他[url=https://github.com/MEng-DayDreamMaster/-PZ-Experienced-Driver/issues] 模组冲突或Bug请报告[/url]。
-[h3]以下已知兼容性问题均出现在多人模式下，请注意：[/h3]
+[h3]模组目前存在以下已知问题：[/h3]
 [olist]
-[*][i][b]在车辆驾驶位退出游戏后，车辆状态重置，再次进入无法自动恢复增益[/b][/i]
-重新进入车辆即可解决。
-
 [*][i][b]在等级提升后，提示横幅出现了未翻译的原始字段[/b][/i]
 [quote]IGUI_perks_Driving[/quote]
-官方遗留问题，游戏获取技能翻译字段时 getType() 错误地重复拼接了 getName()
+官方代码遗留问题，游戏获取技能翻译字段时 getType() 错误地重复拼接了 getName()，暂时无法修复
 [/olist]
 [hr][/hr]
 [h1]特别说明[/h1]

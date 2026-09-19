@@ -17,26 +17,26 @@
 1～10 級以百分比降低屬性數值
 例如 1 級降低 0.03，實際引擎噪音為[b]原始數值的 97%[/b]
 [h3]· 降低車輛零件碰撞傷害[/h3]
-降低車輛零件受到 [b][i]主動／非主動[/i][/b] 碰撞時所造成的傷害
+降低車輛零件受到 [b][i]主動[/i][/b] 碰撞時所造成的傷害
 同上，依技能等級以百分比調整
 
 [b][u]以上功能皆可在沙盒設定中自由選擇是否啟用，並可分別調整各技能等級的參數[/u][/b]
 
 [h2][b]適用性與已知問題[/b][/h2]
+[h3]適用於 [b]B42.20[/b] 及以上版本[/h3]
 可以安全地從現有存檔中移除本模組，如遇到與其他模組的[url=https://github.com/MEng-DayDreamMaster/-PZ-Experienced-Driver/issues] 衝突或 Bug，請回報[/url]
 [list]
 [*]已知會與其他駕駛技能模組產生衝突
-[*]與 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten - Level 15 Skills [B41/B42][/url] 同時使用時，本模組在 10 級以上將不會生效
-請將本模組置於 Beyond Ten [b][u]之前[/u][/b] 載入！！！！！！
+
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten - Level 15 Skills [B41/B42][/url]
+已支援該模組的全部功能：等級上限突破、經驗值獲取及額外增益。
+必須在 Beyond Ten [b][u]之前[/u][/b] 載入此模組！！！！！！！
+
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2490220997]KI5's vehicle collection[/url]
 [/list]
-[h3]適用於 [b]B42.20[/b] 及以上版本[/h3]
 
-[h3][b]以下已知相容性問題目前皆發生於[u]多人模式[/u]，請注意：[/b][/h3]
+[h3][b]模組目前存在以下已知問題：[/b][/h3]
 [olist]
-[*][b]離開遊戲後車輛狀態重置[/b]
-在坐於駕駛座時退出遊戲後，車輛狀態可能會重置；再次進入車輛時，增益不會自動恢復
-[b][u]解決方法：[/u][/b]重新進入車輛即可恢復增益
-
 [*][b]升級後出現未翻譯的技能提示[/b]
 技能等級提升後，提示橫幅可能會出現未翻譯的原始欄位，例如：
 [quote]IGUI_perks_Driving[/quote]

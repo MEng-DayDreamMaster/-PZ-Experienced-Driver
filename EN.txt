@@ -22,34 +22,29 @@ Same as above.
 Levels 1–10 reduce the attribute value by a percentage.
 [i]For example, a Level 1 reduction of 0.03 results in [b]97% of the original[/b] engine noise.[/i]
 [*][h3]Reduce Vehicle Part Collision Damage[/h3]
-Reduces damage caused to vehicle parts by [i]active/passive[/i] collisions.
+Reduces damage caused to vehicle parts by [i]active[/i] collisions.
 Same percentage-based scaling as above.
 [/list]
 [u][b]All of the above features can be individually enabled or disabled, 
 and the parameters for each skill level can be freely adjusted in the Sandbox settings.[/b][/u]
 
 [h2]Compatibility & Known Issues[/h2]
-[h3]Compatible with [b]B42.20 and later[/b].[/h3]
+Compatible with [b]B42.20 and later[/b].
 This mod can be safely removed from an existing save. 
+Known to conflict with other Driving skill mods.
 If you encounter conflicts with other mods or any bugs, [url=https://github.com/MEng-DayDreamMaster/-PZ-Experienced-Driver/issues]please report them[/url].
+
+[h3]Compatibility with Other Mods[/h3]
 [list]
-[*]Known to conflict with other Driving skill mods.
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten - Level 15 Skills [B41/B42][/url]
+Fully supports all features of this mod: increased skill level cap, experience gain, and additional bonuses.
+This mod [b][u]must[/u][/b] be loaded BEFORE Beyond Ten!!!!!!!!!
 
-[*]With [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten - Level 15 Skills [B41/B42][/url], this mod has no effect above Level 10.
-Load this mod [b]BEFORE[/b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten[/url] ! ! ! ! ! !
-
-[*]If you are using any mods that [b][u]override the UI tooltips[/u][/b], please place this mod [b][u]after[/u][/b] them in the load order.
+[*][url=https://steamcommunity.com/workshop/filedetails/?id=2490220997]KI5's vehicle collection[/url]
 [/list]
 
-[h3]The following known issues have only been observed in multiplayer. 
-Please take note:
-[/h3]
+[h3]Known Issues:[/h3]
 [olist]
-[*][h3]Vehicle State Resets After Leaving the Game[/h3]
-When quitting the game while sitting in the driver's seat, the vehicle's state may reset. 
-The bonuses will not automatically be restored when entering the vehicle again.
-[b]Solution:[/b] Simply re-enter the vehicle to restore the bonuses.
-
 [*][h3]Original Skill Level-Up Banner[/h3]
 After increasing a skill level, the notification banner may display an original field such as:
 [quote]IGUI_perks_Driving[/quote]
