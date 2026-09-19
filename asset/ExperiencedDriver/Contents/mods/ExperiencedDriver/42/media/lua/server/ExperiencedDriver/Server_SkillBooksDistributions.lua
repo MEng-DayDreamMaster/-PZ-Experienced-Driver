@@ -2,8 +2,8 @@ require 'Items/SuburbsDistributions'
 require 'Items/ProceduralDistributions'
 
 local bookData = {
-	{name = "ExperiencedDriver.BookDriving1", weights = {10, 6, 1, 10, 1, 2, 10, 2}},
-	{name = "ExperiencedDriver.BookDriving2", weights = {8, 4, 0.8, 8, 0.8, 1, 8, 1}},
+	{name = "ExperiencedDriver.BookDriving1", weights = {10, 6, 1, 10, 1, 1, 10, 2}},
+	{name = "ExperiencedDriver.BookDriving2", weights = {8, 4, 0.8, 8, 0.8, 0.8, 8, 1}},
 	{name = "ExperiencedDriver.BookDriving3", weights = {6, 2, 0.6, 6, 0.6, 0.5, 6, 0.5}},
 	{name = "ExperiencedDriver.BookDriving4", weights = {4, 1, 0.4, 4, 0.4, 0.1, 4, 0.1}},
 	{name = "ExperiencedDriver.BookDriving5", weights = {2, 0.5, 0.2, 2, 0.2, 0.01, 2, 0.05}},
@@ -12,12 +12,12 @@ local bookData = {
 local targets = {
 	"BookstoreBooks",
 	"BookstoreOutdoors",
-	"CrateBooksSchool",
-	"CrateBooks",
-	"UniversityLibraryBooks",
 	"GarageMechanics",
+	"CrateBooks",
+	"LibraryOutdoors",
+	"CrateBooksSchool",
 	"LibraryBooks",
-	"LibraryOutdoors"
+	"UniversityLibraryBooks"
 }
 
 for i, distribution in ipairs(targets) do

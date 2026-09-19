@@ -23,12 +23,6 @@ local function addMutuallyExclusive()
     end 
 end
 
-local function addCompatibleMod()
-    local BeyondTen = _G.BeyondTen
-    if type(BeyondTen) == "table" then
-        ExperiencedDriver.CompatibleList["BeyondTen"] = true
-    end
-end
 
 ---@param object IsoObject
 ---@return table
@@ -121,6 +115,7 @@ local function ohMyPcccccccc(key)
 
             print("=====[DEBUG END] Something went wrong if I appear alone=====")
         elseif key == Keyboard.KEY_NUMPAD1 then
+            -- 这嘎达是修翻译显示错误的
             -- local player = getPlayer()
             -- local perk = Perks.Driving
 
@@ -157,10 +152,14 @@ local function ohMyPcccccccc(key)
             local player = getPlayer()
             if player ~= nil then
                 print("========Beyond Ten Test========")
-                ---@diagnostic disable-next-line: unnecessary-if
+
                 if ExperiencedDriver.CompatibleList["BeyondTen"] then
-                    local BeyondTen = _G.BeyondTen
-                    print(BeyondTen.GetEffectiveLevel(player, Perks.Driving))
+                    -- 此处强制修改当前 XP 格子经验值为 0
+                    ---@diagnostic disable-next-line: need-check-nil, call-non-callable
+                    ExperiencedDriver.BeyondTen.SetStoredXP(player, Perks.Driving, 0)
+
+                    ---@diagnostic disable-next-line: need-check-nil, call-non-callable
+                    print(ExperiencedDriver.BeyondTen.GetEffectiveLevel(player, Perks.Driving))
                 end
             end
             print("=====[DEBUG END] Something went wrong if I appear alone=====")
@@ -169,5 +168,4 @@ local function ohMyPcccccccc(key)
 end
 
 Events.OnGameBoot.Add(addMutuallyExclusive)
-Events.OnGameStart.Add(addCompatibleMod)
 Events.OnKeyStartPressed.Add(ohMyPcccccccc)
