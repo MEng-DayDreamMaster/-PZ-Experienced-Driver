@@ -29,6 +29,23 @@ function ExperiencedDriver.getOptionValue(option, level)
 end
 
 ---@param player IsoPlayer
+---@return number
+function ExperiencedDriver.getLevel(player)
+    if player == nil then return 0 end
+    local level = player:getPerkLevel(Perks.Driving)
+
+    if level >= 10 and ExperiencedDriver.CompatibleList["BeyondTen"] then
+        ---@diagnostic disable-next-line: need-check-nil
+        local GetEffectiveLevel = ExperiencedDriver.BeyondTen.GetEffectiveLevel
+        if type(GetEffectiveLevel) == "function" then
+            level = GetEffectiveLevel(player, Perks.Driving)
+        end 
+    end
+
+    return level
+end
+
+---@param player IsoPlayer
 ---@param amount number
 function ExperiencedDriver.AddXPBeyondTen(player, amount)
     if player == nil or amount == 0 then return end

@@ -57,6 +57,7 @@ local function sendClientMaxSpeed(player, originalMaxSpeed, level)
     end
 end
 
+-- 必须确保传入的 originalEngineLoudness 是已经乘以 SCALE 的数值
 ---@param player IsoPlayer
 local function sendClientEngineLoudness(player, originalEngineLoudness, level)
     local scale = 1.0 - ExperiencedDriver.getOptionValue("NoiseReduction", level)
@@ -71,14 +72,14 @@ local function sendClientEngineLoudness(player, originalEngineLoudness, level)
             player,
             MODULE,
             "SetEngineNoise",
-            { value = math.ceil(value) }
+            { value = value }
         )
     else
         triggerEvent(
             "OnServerCommand",
             MODULE,
             "SetEngineNoise",
-            { value = math.ceil(value) }
+            { value = value }
         )
     end
 end
@@ -111,19 +112,10 @@ function ExperiencedDriver.initVehicleServer(player)
     local originalEngineLoudness = vehicle:getEngineLoudness() * LOUDNESS_SCALE
 
     local vehicleData = ExperiencedDriver.getData(vehicle)
-    local level = player:getPerkLevel(Perks.Driving)    
+    local level = ExperiencedDriver.getLevel(player)    
 
     if playerData.unlocked then 
         if level ~= 0 then 
-            -- Beyond Ten
-            if level >= 10 and ExperiencedDriver.CompatibleList["BeyondTen"] then
-                ---@diagnostic disable-next-line: need-check-nil
-                local GetEffectiveLevel = ExperiencedDriver.BeyondTen.GetEffectiveLevel
-                if type(GetEffectiveLevel) == "function" then
-                    level = GetEffectiveLevel(player, Perks.Driving)
-                end
-            end
-
             if SandboxVars.ExperiencedDriver.Brakepower then           
                 sendClientBrakingForce(player, originalBrakingForce, level)      
             end
@@ -157,15 +149,68 @@ function ExperiencedDriver.initVehicleServer(player)
     end  
 end
 
----@param player IsoPlayer
 ---@param vehicle BaseVehicle
-local function forceUpdateVehicle(player, vehicle, level)
-    vehicle:updatePartStats()
-    sendClientBrakingForce(player, vehicle:getBrakingForce(), level)
-    sendClientEngineLoudness(player, vehicle:getEngineLoudness() * LOUDNESS_SCALE, level)
-    sendClientMaxSpeed(player, vehicle:getMaxSpeed(), level)
+local function forceUpdateVehicle(vehicle)
+    local vehicleData = ExperiencedDriver.getData(vehicle)
+    local player = getPlayer()
+    if isServer() then
+        player = getPlayerByOnlineID(vehicleData.driver)
+    end
+
+    if player ~= nil then
+        local level = ExperiencedDriver.getLevel(player)
+
+        sendClientBrakingForce(player, vehicleData.brakingForce, level)
+        sendClientEngineLoudness(player, vehicleData.engineNoise, level)
+        sendClientMaxSpeed(player, vehicleData.maxSpeed, level)
+    end
 end
 
+--[[
+    这是原版函数的硬重载
+    如果其他作者需要读取原始的 Brakes 函数，应当为其创建备份
+--]] 
+ExperiencedDriver.OverrideBackup.Vehicles = ExperiencedDriver.OverrideBackup.Vehicles or {}
+ExperiencedDriver.OverrideBackup.Vehicles.Update = ExperiencedDriver.OverrideBackup.Vehicles.Update or {}
+ExperiencedDriver.OverrideBackup.Vehicles.Update.Brakes = Vehicles.Update.Brakes
+
+---@overload fun(vehicle: BaseVehicle, part: VehiclePart, elapsedMinutes: number): void
+function Vehicles.Update.Brakes(vehicle, part, elapsedMinutes)
+    if vehicle:isEngineRunning() and vehicle:getBrakeSpeedBetweenUpdate() > 0 and part:getInventoryItem() then
+		local speedMod = (math.min(80, vehicle:getBrakeSpeedBetweenUpdate()) / 20)
+		if ZombRandFloat(0, 100) < speedMod then
+			part:setCondition(part:getCondition() - 1)
+			vehicle:transmitPartCondition(part)
+			vehicle:updatePartStats()
+
+            forceUpdateVehicle(vehicle)
+		end
+	end
+end
+
+ExperiencedDriver.OverrideBackup.Vehicles.LowerCondition = Vehicles.LowerCondition
+
+---@overload fun(vehicle: BaseVehicle, part: VehiclePart, elapsedMinutes: number): number
+function Vehicles.LowerCondition(vehicle, part, elapsedMinutes)
+	if vehicle:isEngineRunning() and vehicle:getCurrentSpeedKmHour() > 10 and part:getInventoryItem() then
+		local chance = part:getInventoryItem():getConditionLowerNormal() * Vehicles.newSystemConditionLowerMult
+		if vehicle:isDoingOffroad() then chance = part:getInventoryItem():getConditionLowerOffroad() * Vehicles.newSystemConditionLowerMult / vehicle:getOffroadEfficiency() end
+		
+		-- will also depend on speed/current steering
+		chance = chance + (vehicle:getCurrentSpeedKmHour() / 200)
+		chance = chance + math.abs(vehicle:getCurrentSteering() / 2)
+		
+		if part:getCondition() > 0 and ZombRandFloat(0, 100) < chance then
+			part:setCondition(part:getCondition() - 1)
+			vehicle:transmitPartCondition(part)
+			vehicle:updatePartStats()
+
+            forceUpdateVehicle(vehicle)
+		end
+		return chance
+	end
+	return 0
+end
 
 local second = 0.0
 local function reduceDamageServer()
@@ -186,22 +231,11 @@ local function reduceDamageServer()
         for i = 0, players:size() - 1 do
             local player = players:get(i)
             if player ~= nil then 
-                local level = player:getPerkLevel(Perks.Driving)
+                local level = ExperiencedDriver.getLevel(player)
 
                 if level ~= 0 then
                     local vehicle = player:getVehicle()
                     if vehicle ~= nil and vehicle:isDriver(player) and player:isDriving() then
-                        -- Beyond Ten
-                        if level >= 10 and ExperiencedDriver.CompatibleList["BeyondTen"] then
-                            ---@diagnostic disable-next-line: need-check-nil
-                            local GetEffectiveLevel = ExperiencedDriver.BeyondTen.GetEffectiveLevel
-                            if type(GetEffectiveLevel) == "function" then
-                                level = GetEffectiveLevel(player, Perks.Driving)
-                            end
-                        end
-
-                        -- forceUpdateVehicle(player, vehicle, level)
-
                         local scale = 1.0 - ExperiencedDriver.getOptionValue("DamageReduction", level)
                         if scale < 0 then
                             scale = 0

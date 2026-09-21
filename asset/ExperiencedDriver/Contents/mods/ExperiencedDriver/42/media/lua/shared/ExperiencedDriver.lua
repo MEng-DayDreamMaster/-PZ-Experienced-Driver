@@ -1,6 +1,18 @@
 ExperiencedDriver = ExperiencedDriver or {}
 ExperiencedDriver.CompatibleList = ExperiencedDriver.CompatibleList or {}
 
+--[[
+    这是一个重载备份，本 mod 强行重载的所有函数都有其原始拷贝
+    调用路径为 ExperiencedDriver.OverrideBackup.函数原始调用路径
+    
+    列表如下：
+    Vehicles.Update.Brakes
+    Vehicles.LowerCondition
+    ISSkillProgressBar.updateTooltip
+    ISSkillProgressBar.renderPerkRect
+--]]
+ExperiencedDriver.OverrideBackup = ExperiencedDriver.OverrideBackup or {}
+
 local myRegistries = require "ExperiencedDriver_registries"
 local find = string.find
 

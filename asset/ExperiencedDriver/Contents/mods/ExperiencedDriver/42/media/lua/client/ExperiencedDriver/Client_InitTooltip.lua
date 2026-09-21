@@ -1,5 +1,9 @@
 require "XpSystem/ISUI/ISSkillProgressBar"
 
+ExperiencedDriver.OverrideBackup.ISSkillProgressBar = ExperiencedDriver.OverrideBackup.ISSkillProgressBar or {}
+ExperiencedDriver.OverrideBackup.ISSkillProgressBar.updateTooltip = ISSkillProgressBar.updateTooltip
+ExperiencedDriver.OverrideBackup.ISSkillProgressBar.renderPerkRect = ISSkillProgressBar.renderPerkRect
+
 local vanillaUpdateTooltip = ISSkillProgressBar.updateTooltip
 local inUpdateTooltip = false
 

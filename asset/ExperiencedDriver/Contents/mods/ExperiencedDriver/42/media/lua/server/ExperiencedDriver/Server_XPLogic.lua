@@ -38,7 +38,7 @@ end
 local function isPlayerQualified(player)
     local vehicle = player:getVehicle()
     local playerData = ExperiencedDriver.getData(player)
-    local level = player:getPerkLevel(Perks.Driving)
+    local level = ExperiencedDriver.getLevel(player)
     
     if playerData ~= nil and vehicle ~= nil then
         if playerData.unlocked and vehicle:isDriver(player) and player:isDriving() then
@@ -47,9 +47,6 @@ local function isPlayerQualified(player)
             
             -- BeyondTen
             elseif ExperiencedDriver.CompatibleList["BeyondTen"] then
-                ---@diagnostic disable-next-line: need-check-nil
-                level = GetEffectiveLevel(player, Perks.Driving)
-
                 ---@diagnostic disable-next-line: need-check-nil
                 if level < ExperiencedDriver.BeyondTen.MAX_LEVEL then
                     ---@diagnostic disable-next-line: return-type-mismatch
@@ -96,12 +93,38 @@ local function addXPServer()
                         _level, beforeXP = GetEffectiveLevel(player, Perks.Driving)
                     end
 
-                    xpObject:AddXP(
-                        Perks.Driving,
-                        amount,
-                        true,
-                        false
-                    )
+                    --[[
+                        接下来让我们欣赏：
+                        小完能的垃圾代码、
+                        炸掉B41经验模组的罪魁祸首。
+
+                        getXp():AddXP()                 五个参数拉满 客户端OK，服务器OK————关闭全局经验倍率后：都不OK
+                        getXp():AddXP()                 noMultiplier设为 true，客户端OK————服务器报错
+                        getXp():AddXPNoMultiplier()     客户端OK，服务器不报错但也没用
+                        addXpNoMultiplier()             客户端OK，服务器也OK————callBack回调也没用了
+                    --]]
+                    if isServer() then
+                        local xpBoost = xpObject:getPerkBoost(Perks.Driving)
+                        local xpScale = 0.5
+
+                        if xpBoost == 1 then
+                            xpScale = 0.75
+                        elseif xpBoost == 2 then
+                            xpScale = 1
+                        elseif xpBoost == 3 then
+                            xpScale = 1.25
+                        end
+
+                        addXpNoMultiplier(player, Perks.Driving, amount * xpScale)
+                        -- xpObject:AddXPNoMultiplier(Perks.Driving, amount)
+                    else
+                        xpObject:AddXP(
+                            Perks.Driving,
+                            amount,
+                            true,
+                            false
+                        )
+                    end
 
                     local afterXP = xpObject:getXP(Perks.Driving)
                     
