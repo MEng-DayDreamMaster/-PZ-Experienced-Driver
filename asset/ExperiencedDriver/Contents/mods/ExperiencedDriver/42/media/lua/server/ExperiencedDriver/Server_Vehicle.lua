@@ -200,7 +200,7 @@ local function reduceDamageServer()
                             end
                         end
 
-                        forceUpdateVehicle(player, vehicle, level)
+                        -- forceUpdateVehicle(player, vehicle, level)
 
                         local scale = 1.0 - ExperiencedDriver.getOptionValue("DamageReduction", level)
                         if scale < 0 then
@@ -225,26 +225,30 @@ local function reduceDamageServer()
 
                                             if isServer() then
                                                 vehicle:transmitModData() 
-                                                sendServerCommand(
-                                                    player,
-                                                    MODULE,
-                                                    "SetNewCondition",
-                                                    {
-                                                        id = partId,
-                                                        amount = amount
-                                                    }
-                                                )
-                                            else
-                                                triggerEvent(
-                                                    "OnServerCommand",
-                                                    MODULE,
-                                                    "SetNewCondition",
-                                                    {
-                                                        id = partId,
-                                                        amount = amount
-                                                    }
-                                                )
-                                            end     -- 12 都怪Lua不给我用 continue; 害我写 end 楼梯                                 
+                                            --     sendServerCommand(
+                                            --         player,
+                                            --         MODULE,
+                                            --         "SetNewCondition",
+                                            --         {
+                                            --             id = partId,
+                                            --             amount = amount
+                                            --         }
+                                            --     )
+                                            -- else
+                                            --     triggerEvent(
+                                            --         "OnServerCommand",
+                                            --         MODULE,
+                                            --         "SetNewCondition",
+                                            --         {
+                                            --             id = partId,
+                                            --             amount = amount
+                                            --         }
+                                            --     )
+                                            end     -- 12 都怪Lua不给我用 continue; 害我写 end 楼梯  
+                                            
+                                            part:setCondition(amount)
+                                            vehicle:transmitPartCondition(part)
+
                                         end     -- 11
                                     end     -- 10
                                 end     -- 9

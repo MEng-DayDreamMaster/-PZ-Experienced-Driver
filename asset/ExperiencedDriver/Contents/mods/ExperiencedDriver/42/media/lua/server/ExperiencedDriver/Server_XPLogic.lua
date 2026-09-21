@@ -63,14 +63,15 @@ local function isPlayerQualified(player)
 end
 
 local second = 0.0
-local function addXPServer()    
+local function addXPServer()
+    local amount = SandboxVars.ExperiencedDriver.XPValue or 1.0
+    if amount == 0 then return end
+
     local interval = SandboxVars.ExperiencedDriver.TimeInterval or 40
     local delta = getGameTime():getRealworldSecondsSinceLastUpdate()
     second = second + delta
     if second >= interval then
         second = 0.0
-
-        local amount = SandboxVars.ExperiencedDriver.XPValue or 1.0
         local players = {}
         if isServer() then
             players = getOnlinePlayers()
@@ -94,29 +95,11 @@ local function addXPServer()
                         ---@diagnostic disable-next-line: need-check-nil
                         _level, beforeXP = GetEffectiveLevel(player, Perks.Driving)
                     end
-                        
-                    -- 原始 1.0 经验在不获取倍率会变成 0.25
-                    -- XPBoost +3 后三级会初始得到 6.6 经验
-                    if player:hasTrait(ExperiencedDriver.ACEDRIVER) then
-                        if level < 4 then
-                            amount = amount * 2.5
-                        elseif level < 6 then
-                            amount = amount * 2.75
-                        elseif level < 8 then
-                            amount = amount * 3.0
-                        else
-                            amount = amount * 3.25
-                        end
-                    else
-                        amount = amount * 4.0
-                    end
 
                     xpObject:AddXP(
                         Perks.Driving,
                         amount,
-                        false,
                         true,
-                        false,
                         false
                     )
 
