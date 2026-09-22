@@ -188,6 +188,90 @@ function Vehicles.Update.Brakes(vehicle, part, elapsedMinutes)
 	end
 end
 
+ExperiencedDriver.OverrideBackup.Vehicles.Update.GasTank = Vehicles.Update.GasTank
+---@overload fun(vehicle: BaseVehicle, part: VehiclePart, elapsedMinutes: number): void
+function Vehicles.Update.GasTank(vehicle, part, elapsedMinutes)
+	local invItem = part:getInventoryItem()
+	if not invItem then return end
+	local amount = part:getContainerContentAmount()
+	if elapsedMinutes > 0 and amount > 0 and vehicle:isEngineRunning() then
+        -- Experienced Driver
+        local vehicleData = ExperiencedDriver.getData(vehicle)
+        local originalMaxSpeed = vehicleData.maxSpeed
+        local isIdle = false
+
+		local amountOld = amount
+		-- calcul how much gas is used, based mainly on engine speed, engine quality & mass.
+		local gasMultiplier = 90000
+		-- heater consume more gas
+		local heater = vehicle:getHeater()
+		if heater and heater:getModData().active then
+			gasMultiplier = gasMultiplier - 5000
+		end
+		-- if quality is 60, we do: 100 - 60 = 40; 40/2 = 20; 20/100=0.2; 0.2+1 = 1.2 : our multiplier;
+		local qualityMultiplier = ((100 - vehicle:getEngineQuality()) / 200) + 1
+		local massMultiplier =  ((math.abs(1000 - vehicle:getScript():getMass())) / 300) + 1
+		-- the closer we are to change shift, the less we consume gas
+
+        -- 在这里强行干预原版的油耗获取，因为原版的油耗曲线过于极端
+		-- local speedToNextTransmission = ((vehicle:getMaxSpeed() / vehicle:getScript():getGearRatioCount()) * 0.71) * vehicle:getTransmissionNumber()
+        local speedToNextTransmission = ((originalMaxSpeed / vehicle:getScript():getGearRatioCount()) * 0.71) * vehicle:getTransmissionNumber()
+
+		local speedMultiplier = (speedToNextTransmission - vehicle:getCurrentSpeedKmHour()) * 350
+		-- if vehicle is stopped, we half the value of gas consummed
+		if math.floor(vehicle:getCurrentSpeedKmHour()) > 0 then
+            ---@diagnostic disable-next-line: assign-type-mismatch
+			gasMultiplier = gasMultiplier / qualityMultiplier / massMultiplier
+		else
+            ---@diagnostic disable-next-line: assign-type-mismatch
+			gasMultiplier = (gasMultiplier / qualityMultiplier) * 2
+			speedMultiplier = 1
+            isIdle = true
+		end
+		-- we're at max gear, cap general gas consumption
+		if speedMultiplier < 800 and speedMultiplier ~= 1 then
+			speedMultiplier = 800
+		end
+
+        if speedMultiplier == 1 then -- we're idling, need to increase the fuel consumption still
+            speedMultiplier = 300
+        end
+
+		local newAmount = (speedMultiplier / gasMultiplier)  * SandboxVars.CarGasConsumption
+		newAmount =  newAmount * (vehicle:getEngineSpeed() / 2500.0)
+
+        -- Experienced Driver
+        -- 在这里简单粗暴地修改一下新扣除的油量是原始速度的比率
+        local ratio = vehicle:getMaxSpeed() / originalMaxSpeed
+        if not isIdle then
+            newAmount = newAmount * ratio
+        end
+
+		amount = amount - elapsedMinutes * newAmount
+
+        if not isIdle then
+            print("Original Consume" .. elapsedMinutes * newAmount)     -- delete
+        else
+            print("Original Consume" .. elapsedMinutes * newAmount / ratio)     -- delete
+        end
+	    print("new Consume" .. elapsedMinutes * newAmount)                  -- delete
+
+		-- if your gas tank is in bad condition, you can simply lose fuel
+		if part:getCondition() < 70 then
+			if ZombRand(part:getCondition() * 2) == 0 then
+				amount = amount - 0.01
+			end
+		end
+	
+		part:setContainerContentAmount(amount, false, true)
+		amount = part:getContainerContentAmount()
+		local precision = (amount < 0.5) and 2 or 1
+		if VehicleUtils.compareFloats(amountOld, amount, precision) then
+			vehicle:transmitPartModData(part)
+		end
+	end
+end
+
 ExperiencedDriver.OverrideBackup.Vehicles.LowerCondition = Vehicles.LowerCondition
 
 ---@overload fun(vehicle: BaseVehicle, part: VehiclePart, elapsedMinutes: number): number
