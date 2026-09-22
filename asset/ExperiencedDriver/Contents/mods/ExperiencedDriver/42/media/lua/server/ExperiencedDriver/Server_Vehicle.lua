@@ -249,13 +249,6 @@ function Vehicles.Update.GasTank(vehicle, part, elapsedMinutes)
 
 		amount = amount - elapsedMinutes * newAmount
 
-        if not isIdle then
-            print("Original Consume" .. elapsedMinutes * newAmount)     -- delete
-        else
-            print("Original Consume" .. elapsedMinutes * newAmount / ratio)     -- delete
-        end
-	    print("new Consume" .. elapsedMinutes * newAmount)                  -- delete
-
 		-- if your gas tank is in bad condition, you can simply lose fuel
 		if part:getCondition() < 70 then
 			if ZombRand(part:getCondition() * 2) == 0 then
