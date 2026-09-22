@@ -30,12 +30,15 @@ and the parameters for each skill level can be freely adjusted in the Sandbox se
 
 [h2]Compatibility & Known Issues[/h2]
 Compatible with [b]B42.20 and later[/b].
-This mod can be safely removed from an existing save. 
-Known to conflict with other Driving skill mods.
+This mod can be added at any time, but removing it from an existing save is [b]NOT recommended[/b]. 
+If you absolutely need to remove it, always remember to back up your save first! ! ! ! !
+
 If you encounter conflicts with other mods or any bugs, [url=https://github.com/MEng-DayDreamMaster/-PZ-Experienced-Driver/issues]please report them[/url].
 
 [h3]Compatibility with Other Mods[/h3]
 [list]
+[*]Known to conflict with other Driving skill mods.
+
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765241705]Beyond Ten - Level 15 Skills [B41/B42][/url]
 Fully supports all features of this mod: increased skill level cap, experience gain, and additional bonuses.
 This mod [b][u]must[/u][/b] be loaded BEFORE Beyond Ten!!!!!!!!!
