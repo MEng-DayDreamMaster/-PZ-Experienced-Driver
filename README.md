@@ -45,7 +45,8 @@ Reduces damage dealt to vehicle parts through **active and passive collisions**.
 
 ## Compatibility & Known Issues
 
-This mod can be safely removed from an existing save.
+⚠️ This mod can be added at any time, but removing it from an existing save is **NOT** recommended. 
+If you absolutely need to remove it, always remember to back up your save first! ! ! ! !
 
 If you encounter conflicts with other mods or any bugs, please report them.
 
