@@ -45,7 +45,8 @@ Reduces damage dealt to vehicle parts through **active and passive collisions**.
 
 ## Compatibility & Known Issues
 
-⚠️ This mod can be added at any time, but removing it from an existing save is **NOT** recommended. 
+⚠️ This mod can be added at any time.
+But removing it from an existing save is **NOT** recommended. 
 If you absolutely need to remove it, always remember to back up your save first! ! ! ! !
 
 If you encounter conflicts with other mods or any bugs, please report them.
@@ -60,16 +61,7 @@ If you encounter conflicts with other mods or any bugs, please report them.
 ### Multiplayer Known Issues
 
 The following issues have only been observed in multiplayer. Please take note:
-
-#### 1. Vehicle State Resets After Leaving the Game
-
-When quitting the game while sitting in the driver's seat, the vehicle's state may reset.
-
-The skill bonuses may not be automatically restored when entering the vehicle again.
-
-**Solution:** Simply exit and re-enter the vehicle to restore the bonuses.
-
-#### 2. Original Skill Level-Up Banner
+#### 1. Original Skill Level-Up Banner
 
 After increasing the Driving skill level, the level-up notification banner may display the original field:
 
